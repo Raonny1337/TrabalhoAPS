@@ -53,6 +53,7 @@ public class CreateBookView implements Observer {
         try {
             if (controller.errorMessage == null || controller.errorMessage.isEmpty()) {
                 System.out.println("Ocorreu um erro inesperado");
+                return;
             }
             System.out.println("Error: " + message);
             return;

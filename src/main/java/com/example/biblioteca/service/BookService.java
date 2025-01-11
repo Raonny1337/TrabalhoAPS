@@ -16,6 +16,10 @@ public class BookService {
 
     public Book registerBook(Book book) {
         isbnValidator.validate(book);
+        Book bookResult = bookRepository.findByIsbn(book.getIsbn());
+        if (bookResult != null) {
+            throw new IllegalArgumentException("Livro já cadastrado.");
+        }
         return bookRepository.save(book);
     }
 
