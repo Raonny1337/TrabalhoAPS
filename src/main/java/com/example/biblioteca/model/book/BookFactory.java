@@ -7,7 +7,7 @@ public class BookFactory {
         book.setAuthor(author);
         book.setIsbn(isbn);
         book.setDescription(description);
-        book.setAvailableCopies(availableCopies);
+        book.setAvaliableCopies(availableCopies);
         return book;
     }
 }

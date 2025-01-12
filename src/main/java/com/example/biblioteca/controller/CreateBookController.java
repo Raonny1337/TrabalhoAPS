@@ -7,13 +7,14 @@ import com.example.biblioteca.service.BookService;
 public class CreateBookController extends ChangeNotifier {
     private BookService bookService;
 
-    public boolean hasError = false;
-    public String errorMessage = null;
-    public boolean isLoading = false;
-    public Book registerBook = null;
+    private Book registerBook = null;
 
     public CreateBookController(BookService bookService) {
         this.bookService = bookService;
+    }
+
+    public Book getRegisterBook() {
+        return registerBook;
     }
 
     public void registerBook(Book book) {
@@ -34,5 +35,11 @@ public class CreateBookController extends ChangeNotifier {
             isLoading = false;
             notifyObservers();
         }
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+        registerBook = null;
     }
 }

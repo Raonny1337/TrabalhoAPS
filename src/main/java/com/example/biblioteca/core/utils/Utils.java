@@ -18,4 +18,18 @@ public class Utils {
         }
         return validInput;
     }
+
+    public static int getValidIntegerInput(Scanner scanner) {
+        int validInput = -1;
+        boolean isValid = false;
+        while (!isValid) {
+            try {
+                validInput = Integer.parseInt(scanner.nextLine());
+                isValid = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Número inválido");
+            }
+        }
+        return validInput;
+    }
 }

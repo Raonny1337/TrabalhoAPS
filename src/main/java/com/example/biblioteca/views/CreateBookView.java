@@ -43,7 +43,7 @@ public class CreateBookView implements Observer {
         System.out.println("ISBN: " + book.getIsbn());
         System.out.println("Titulo: " + book.getTitle());
         System.out.println("Autor: " + book.getAuthor());
-        System.out.println("Cópias: " + book.getAvailableCopies());
+        System.out.println("Cópias: " + book.getAvaliableCopies());
     }
 
     public void showErrorMessage(String message) {
@@ -75,11 +75,15 @@ public class CreateBookView implements Observer {
             return;
         }
 
-        if (controller.registerBook != null) {
-            showConfirmation(controller.registerBook);
-            controller.registerBook = null;
-            isOpen = false;
+        if (controller.getRegisterBook() != null) {
+            showConfirmation(controller.getRegisterBook());
+            dispose();
         }
+    }
+
+    public void dispose() {
+        isOpen = false;
+        controller.dispose();
     }
 
 }

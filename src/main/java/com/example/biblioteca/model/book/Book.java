@@ -1,11 +1,16 @@
 package com.example.biblioteca.model.book;
 
 public class Book {
+    private int id;
     private String title;
     private String author;
     private String isbn;
     private String description;
-    private int availableCopies;
+    private int avaliableCopies;
+
+    public int getId() {
+        return id;
+    }
 
     public String getTitle() {
         return title;
@@ -39,11 +44,11 @@ public class Book {
         this.description = description;
     }
 
-    public int getAvailableCopies() {
-        return availableCopies;
+    public int getAvaliableCopies() {
+        return avaliableCopies;
     }
 
-    public void setAvailableCopies(int availableCopies) {
-        this.availableCopies = availableCopies;
+    public void setAvaliableCopies(int availableCopies) {
+        this.avaliableCopies = availableCopies;
     }
 }
