@@ -27,7 +27,7 @@ public class ReaderRepository {
                 readers.add(reader);
             }
         } catch (SQLException e) {
-            System.out.println("Error while trying to find usernames");
+            System.out.println("Erro ao tentar encontrar leitores.");
         }
         return readers;
     }
@@ -42,7 +42,7 @@ public class ReaderRepository {
                 PreparedStatement ps = createPrepareStatementRegisterReader(conn, reader)) {
             ps.execute();
         } catch (SQLException e) {
-            System.out.println("Error while trying to update reader");
+            System.out.println("Erro ao tentar inserir o leitor.");
         }
     }
 

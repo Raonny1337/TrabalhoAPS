@@ -22,9 +22,9 @@ public class LoginView {
     }
 
     public User displayLogin(Scanner scanner, UserType type) {
-        System.out.println("Enter the username: ");
+        System.out.println("Digite o nome de usuário: ");
         String username = scanner.nextLine().toLowerCase();
-        System.out.println("Enter the password: ");
+        System.out.println("Digite a senha: ");
         String password = scanner.nextLine();
         if (type.equals(UserType.READER)) {
             return ReaderController.loginReader(username, password);

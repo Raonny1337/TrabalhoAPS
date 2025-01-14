@@ -26,7 +26,7 @@ public class LibrarianRepository {
                 librarians.add(librarian);
             }
         } catch (SQLException e) {
-            System.out.println("Error while trying to find librarians");
+            System.out.println("Erro ao tentar encontrar bibliotecários.");
         }
         return librarians;
     }
@@ -41,7 +41,7 @@ public class LibrarianRepository {
                 PreparedStatement ps = createPrepareStatementRegisterReader(conn, librarian)) {
             ps.execute();
         } catch (SQLException e) {
-            System.out.println("Error while trying to update librarian.");
+            System.out.println("Erro ao tentar inserir o bibliotecário.");
         }
     }
 

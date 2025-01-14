@@ -16,16 +16,16 @@ public class LibrarianService {
     }
 
     public static void registerLibrarian() {
-        System.out.println("Enter the username: ");
+        System.out.println("Digite o nome de usuário: ");
         String username = scanner.nextLine().toLowerCase();
         List<String> usernames = getLibrarians().stream().map(User::getUsername).toList();
         while(usernames.contains(username)) {
-            System.out.println("Username already registered, enter another one: ");
+            System.out.println("Nome de usuário já cadastrado, digite outro:");
             username = scanner.nextLine().toLowerCase();
         }
-        System.out.println("Enter a password: ");
+        System.out.println("Digite uma senha: ");
         String password = scanner.nextLine();
-        System.out.println("Enter your name: ");
+        System.out.println("Digite seu nome: ");
         String name = scanner.nextLine();
         LibrarianRepository.registerReader(LibrarianFactory.createLibrarian(username,password,name));
     }
@@ -35,13 +35,13 @@ public class LibrarianService {
         Librarian librarian = librarians.stream()
                 .filter(l -> l.getUsername().equals(username)).findAny().orElse(null);
         if(librarian == null) {
-            System.out.println("User not found.");
+            System.out.println("Nome de usuário não encontrado.");
         }else {
             if(librarian.getPassword().equals(password)) {
-                System.out.println("Welcome " + librarian.getName() + ".");
+                System.out.println("Bem vindo " + librarian.getName() + "!");
                 return librarian;
             }else {
-                System.out.println("Incorrect password.");
+                System.out.println("Senha incorreta.");
 
             }
         }
